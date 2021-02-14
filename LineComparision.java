@@ -1,21 +1,11 @@
-import java.util.*;
-public class LineComparision {
+import java.util.Scanner;
 
+public class LineComparision {
 	public static void main(String[] args) {
-		Scanner scan =new Scanner(System.in);
 		System.out.println("Enter coordinates of Line1");
-		double a = scan.nextDouble();
-		double b = scan.nextDouble();
-		double c = scan.nextDouble();
-		double d = scan.nextDouble();
-		double lengthOfLine1 = calculate(a,b,c,d);
-		
+		double lengthOfLine1 = calculate();
 		System.out.println("Enter coordinates of line2");
-		double e = scan.nextDouble();
-		double f = scan.nextDouble();
-		double g = scan.nextDouble();
-		double h = scan.nextDouble();
-		double lengthOfLine2 = calculate(e,f,g,h);
+		double lengthOfLine2 = calculate();
 		
 		System.out.println("length of line1 " +lengthOfLine1);
 		System.out.println("length of line2 " +lengthOfLine2);
@@ -25,10 +15,13 @@ public class LineComparision {
 		else
 			System.out.println("length of lines are not equal");
 	}
-	public static double calculate(double x1,double y1, double x2, double y2) {
+	public static double calculate() {
+		Scanner scan =new Scanner(System.in);
+		double x1 = scan.nextDouble();
+		double y1 = scan.nextDouble();
+		double x2= scan.nextDouble();
+		double y2= scan.nextDouble();
 		double length = Math.sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
 		return length;
-	}
+	}	
 }
-
-
